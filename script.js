@@ -417,12 +417,16 @@ if (document.getElementById('matches-grid')) {
             this.showLoading();
             
             try {
+                console.log('Attempting to load matches.json...');
                 const response = await fetch('data/matches.json');
+                console.log('Response status:', response.status, response.ok);
+                
                 if (!response.ok) {
-                    throw new Error('Failed to load matches data');
+                    throw new Error(`Failed to load matches data: ${response.status}`);
                 }
                 
                 this.matches = await response.json();
+                console.log('Loaded matches from JSON:', this.matches.length, 'videos');
                 this.filteredMatches = [...this.matches];
                 
                 // Add video thumbnails
@@ -435,6 +439,7 @@ if (document.getElementById('matches-grid')) {
                 // Fallback to basic matches if JSON fails
                 this.matches = this.getFallbackMatches();
                 this.filteredMatches = [...this.matches];
+                console.log('Using fallback matches:', this.matches.length, 'videos');
             } finally {
                 this.hideLoading();
             }
@@ -460,11 +465,44 @@ if (document.getElementById('matches-grid')) {
         }
         
         getFallbackMatches() {
+            console.log('Using fallback matches data');
             return [
                 {
                     "link": "https://www.youtube.com/watch?v=H4aJ38oTLAE",
                     "headline": "Prathamesh Jawkar v Mike Schloesser – compound men semifinal",
                     "description": "World Cup Final 2023 semifinal: An intense battle where Jawkar faces world number one Mike Schloesser.",
+                    "category": "World Cup Final",
+                    "year": "2023",
+                    "venue": "Hermosillo, Mexico"
+                },
+                {
+                    "link": "https://youtu.be/zo6YSYBusgc?si=tb7LmxtCDhRQfClg",
+                    "headline": "Prathamesh Samadhan Jawkar v Robin Jaatma",
+                    "description": "Compound men semifinal 1 at the Hyundai Archery World Cup Stage 2, Shanghai 2023.",
+                    "category": "World Cup Stage 2",
+                    "year": "2023",
+                    "venue": "Shanghai, China"
+                },
+                {
+                    "link": "https://youtu.be/vwtG9xtGYBU?si=8omFBu5JlrFb6fgQ",
+                    "headline": "Compound men gold | Hermosillo 2023 World Cup Final",
+                    "description": "Jawkar competes for gold against Mathias Fullerton at the 2023 World Cup Final in Mexico.",
+                    "category": "World Cup Final",
+                    "year": "2023",
+                    "venue": "Hermosillo, Mexico"
+                },
+                {
+                    "link": "https://youtu.be/OsBiqXrPI0o?si=iZfE53S1W9N1IyH3",
+                    "headline": "Prathamesh Samadhan Jawkar v Mike Schloesser",
+                    "description": "Gold medal match at the World Cup Stage 2 in Shanghai 2023. Jawkar faces Schloesser in a dramatic final.",
+                    "category": "World Cup Stage 2",
+                    "year": "2023",
+                    "venue": "Shanghai, China"
+                },
+                {
+                    "link": "https://youtu.be/JAW3CscxJeQ?si=qLmsFkPph9yi3Wg5",
+                    "headline": "Match | Hermosillo 2023 Hyundai Archery World Cup Final",
+                    "description": "Condensed footage: Mathias Fullerton vs Prathamesh Jawkar for the gold medal.",
                     "category": "World Cup Final",
                     "year": "2023",
                     "venue": "Hermosillo, Mexico"
@@ -524,7 +562,10 @@ if (document.getElementById('matches-grid')) {
         renderMatches() {
             if (!this.matchesGrid) return;
             
+            console.log('Rendering matches. Filter:', this.currentFilter, 'Count:', this.filteredMatches.length);
+            
             if (this.filteredMatches.length === 0) {
+                console.log('No matches to display - showing empty state');
                 this.showEmptyState();
                 return;
             }
@@ -534,6 +575,7 @@ if (document.getElementById('matches-grid')) {
             ).join('');
             
             this.matchesGrid.innerHTML = matchesHTML;
+            console.log('Rendered', this.filteredMatches.length, 'match cards to DOM');
             
             // Add click event listeners to match cards
             this.addMatchEventListeners();
