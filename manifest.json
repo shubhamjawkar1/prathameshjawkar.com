@@ -12,7 +12,7 @@
   "categories": ["sports", "entertainment", "lifestyle"],
   "icons": [
     {
-      "src": "data/banner.jpg",
+      "src": "data/icon.jpg",
       "sizes": "512x512",
       "type": "image/jpeg",
       "purpose": "any maskable"
@@ -26,7 +26,7 @@
       "url": "/#journey",
       "icons": [
         {
-          "src": "data/banner.jpg",
+          "src": "data/icon.jpg",
           "sizes": "96x96",
           "type": "image/jpeg"
         }
@@ -39,7 +39,7 @@
       "url": "/#matches",
       "icons": [
         {
-          "src": "data/banner.jpg",
+          "src": "data/icon.jpg",
           "sizes": "96x96",
           "type": "image/jpeg"
         }
@@ -52,7 +52,7 @@
       "url": "/#news",
       "icons": [
         {
-          "src": "data/banner.jpg",
+          "src": "data/icon.jpg",
           "sizes": "96x96",
           "type": "image/jpeg"
         }
