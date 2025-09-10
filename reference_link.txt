@@ -1,3 +1,70 @@
 1) add git to cloudfare
 
 https://www.youtube.com/watch?v=C66Z9TGWHns
+
+
+Hosting
+step 1:
+link for git to add 
+
+https://dash.cloudflare.com/91193ce5a04f8464c828b4c8a71ceff8/workers-and-pages/create/pages
+
+
+step 2:
+Great! Your website is now live and working at https://prathameshjawkar-com.pages.dev/. I can see it's displaying Prathamesh Jawkar's archery portfolio beautifully.
+
+Regarding the custom domain HTTPS issue, yes, you're absolutely right! The problem is likely because you have your domain's nameservers pointing to a free hosting service instead of Cloudflare.
+
+Here's what's happening:
+
+1. Your domain nameservers are pointing to the free hosting service
+2. Cloudflare can't manage SSL certificates because it doesn't control your domain's DNS
+3. HTTPS won't work until Cloudflare can manage your domain's DNS
+
+Solution: Change Nameservers to Cloudflare
+
+Step 1: Add Your Domain to Cloudflare (if not already done)
+1. Go to https://dash.cloudflare.com/
+2. Click "Add site"
+3. Enter your domain: prathameshjawkar.com
+4. Choose the Free plan
+5. Cloudflare will scan your existing DNS records
+
+Step 2: Get Cloudflare Nameservers
+After adding your domain, Cloudflare will show you nameservers like:
+•  alice.ns.cloudflare.com
+•  bob.ns.cloudflare.com
+
+Step 3: Update Nameservers in GoDaddy
+1. Log into GoDaddy
+2. Go to Domain Manager
+3. Find your domain prathameshjawkar.com
+4. Click "Manage DNS" or "Nameservers"
+5. Change from "Default" to "Custom"
+6. Replace the current nameservers with Cloudflare's nameservers
+7. Save changes
+
+Step 4: Configure DNS in Cloudflare
+Once nameservers are updated:
+1. In Cloudflare DNS settings, add a CNAME record:
+•  Name: @ (or your subdomain like www)
+•  Target: prathameshjawkar-com.pages.dev
+•  Proxy status: ✅ Proxied (orange cloud)
+
+Step 5: Connect Custom Domain in Pages
+1. Go to your Pages project in Cloudflare
+2. Settings → Custom domains
+3. Add custom domain: prathameshjawkar.com
+4. Cloudflare will automatically handle the SSL certificate
+
+Timeline:
+•  Nameserver change: 24-48 hours to fully propagate
+•  SSL certificate: Usually issued within 15 minutes after nameservers are active
+
+Alternative (Quick Fix):
+If you want to keep your current hosting setup, you could:
+1. Use a subdomain like portfolio.prathameshjawkar.com
+2. Point just that subdomain to Cloudflare Pages using a CNAME record
+3. Keep your main domain on the free hosting
+
+Would you like me to walk you through any of these steps in more detail?
