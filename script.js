@@ -387,6 +387,276 @@ window.addEventListener('scroll', throttledScrollHandler);
 
 console.log('Sports Portfolio Website Loaded Successfully!');
 
+// Matches functionality - load immediately if matches section exists
+if (document.getElementById('matches-grid')) {
+    // Matches Section Functionality
+    class MatchesManager {
+        constructor() {
+            this.matches = [];
+            this.filteredMatches = [];
+            this.currentFilter = 'all';
+            this.matchesGrid = document.getElementById('matches-grid');
+            this.loadingElement = document.getElementById('matches-loading');
+            this.filterButtons = document.querySelectorAll('.filter-btn');
+            
+            this.init();
+        }
+        
+        async init() {
+            try {
+                await this.loadMatches();
+                this.setupEventListeners();
+                this.renderMatches();
+            } catch (error) {
+                console.error('Failed to initialize matches:', error);
+                this.showError();
+            }
+        }
+        
+        async loadMatches() {
+            this.showLoading();
+            
+            try {
+                const response = await fetch('data/matches.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load matches data');
+                }
+                
+                this.matches = await response.json();
+                this.filteredMatches = [...this.matches];
+                
+                // Add video thumbnails
+                this.matches.forEach(match => {
+                    match.thumbnail = this.getVideoThumbnail(match.link);
+                });
+                
+            } catch (error) {
+                console.error('Error loading matches:', error);
+                // Fallback to basic matches if JSON fails
+                this.matches = this.getFallbackMatches();
+                this.filteredMatches = [...this.matches];
+            } finally {
+                this.hideLoading();
+            }
+        }
+        
+        getVideoThumbnail(videoUrl) {
+            // Extract video ID from YouTube URLs
+            if (videoUrl.includes('youtube.com/watch?v=') || videoUrl.includes('youtu.be/')) {
+                let videoId;
+                if (videoUrl.includes('youtube.com/watch?v=')) {
+                    videoId = videoUrl.split('v=')[1].split('&')[0];
+                } else if (videoUrl.includes('youtu.be/')) {
+                    videoId = videoUrl.split('youtu.be/')[1].split('?')[0];
+                }
+                return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+            } else if (videoUrl.includes('youtube.com/shorts/')) {
+                const videoId = videoUrl.split('shorts/')[1];
+                return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+            }
+            
+            // Default placeholder for non-YouTube videos
+            return 'data/banner.jpg';
+        }
+        
+        getFallbackMatches() {
+            return [
+                {
+                    "link": "https://www.youtube.com/watch?v=H4aJ38oTLAE",
+                    "headline": "Prathamesh Jawkar v Mike Schloesser – compound men semifinal",
+                    "description": "World Cup Final 2023 semifinal: An intense battle where Jawkar faces world number one Mike Schloesser.",
+                    "category": "World Cup Final",
+                    "year": "2023",
+                    "venue": "Hermosillo, Mexico"
+                }
+            ];
+        }
+        
+        setupEventListeners() {
+            // Filter buttons
+            this.filterButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const filter = e.target.getAttribute('data-filter');
+                    this.filterMatches(filter);
+                    this.updateActiveFilter(e.target);
+                });
+            });
+            
+            // Dropdown filter items
+            document.querySelectorAll('.dropdown-item[data-filter]').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const filter = e.target.getAttribute('data-filter');
+                    this.filterMatches(filter);
+                    
+                    // Navigate to matches section
+                    const matchesSection = document.getElementById('matches');
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = matchesSection.offsetTop - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        }
+        
+        filterMatches(filter) {
+            this.currentFilter = filter;
+            
+            if (filter === 'all') {
+                this.filteredMatches = [...this.matches];
+            } else {
+                this.filteredMatches = this.matches.filter(match => 
+                    match.category === filter
+                );
+            }
+            
+            this.renderMatches();
+        }
+        
+        updateActiveFilter(activeButton) {
+            this.filterButtons.forEach(btn => btn.classList.remove('active'));
+            activeButton.classList.add('active');
+        }
+        
+        renderMatches() {
+            if (!this.matchesGrid) return;
+            
+            if (this.filteredMatches.length === 0) {
+                this.showEmptyState();
+                return;
+            }
+            
+            const matchesHTML = this.filteredMatches.map(match => 
+                this.createMatchCard(match)
+            ).join('');
+            
+            this.matchesGrid.innerHTML = matchesHTML;
+            
+            // Add click event listeners to match cards
+            this.addMatchEventListeners();
+        }
+        
+        createMatchCard(match) {
+            const thumbnail = match.thumbnail || this.getVideoThumbnail(match.link);
+            
+            return `
+                <div class="match-card show" data-category="${match.category}">
+                    <div class="match-video">
+                        <img src="${thumbnail}" 
+                             alt="${match.headline}" 
+                             class="match-thumbnail"
+                             loading="lazy"
+                             onerror="this.src='data/banner.jpg'">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="match-content">
+                        <div class="match-meta">
+                            <span class="match-category">${match.category}</span>
+                            <span class="match-year">${match.year}</span>
+                        </div>
+                        <h3 class="match-title">${match.headline}</h3>
+                        <p class="match-description">${match.description}</p>
+                        ${match.venue ? `
+                            <div class="match-venue">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>${match.venue}</span>
+                            </div>
+                        ` : ''}
+                        <a href="${match.link}" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="watch-button">
+                            <i class="fas fa-play"></i>
+                            Watch Match
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+        
+        addMatchEventListeners() {
+            const matchCards = document.querySelectorAll('.match-card');
+            
+            matchCards.forEach(card => {
+                const playButton = card.querySelector('.play-button');
+                const watchButton = card.querySelector('.watch-button');
+                const matchLink = watchButton.getAttribute('href');
+                
+                // Play button click
+                if (playButton) {
+                    playButton.addEventListener('click', () => {
+                        window.open(matchLink, '_blank', 'noopener,noreferrer');
+                    });
+                }
+                
+                // Card click (but not on buttons)
+                card.addEventListener('click', (e) => {
+                    if (!e.target.closest('.watch-button') && !e.target.closest('.play-button')) {
+                        window.open(matchLink, '_blank', 'noopener,noreferrer');
+                    }
+                });
+            });
+        }
+        
+        showLoading() {
+            if (this.loadingElement) {
+                this.loadingElement.style.display = 'block';
+            }
+        }
+        
+        hideLoading() {
+            if (this.loadingElement) {
+                this.loadingElement.style.display = 'none';
+            }
+        }
+        
+        showEmptyState() {
+            if (this.matchesGrid) {
+                this.matchesGrid.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+                        <i class="fas fa-video" style="font-size: 3rem; color: #ccc; margin-bottom: 1rem;"></i>
+                        <h3 style="color: #666; margin-bottom: 0.5rem;">No matches found</h3>
+                        <p style="color: #888;">Try selecting a different category or view all matches.</p>
+                    </div>
+                `;
+            }
+        }
+        
+        showError() {
+            if (this.matchesGrid) {
+                this.matchesGrid.innerHTML = `
+                    <div class="error-state" style="grid-column: 1 / -1; text-align: center; padding: 3rem;">
+                        <i class="fas fa-exclamation-triangle" style="font-size: 3rem; color: #DC143C; margin-bottom: 1rem;"></i>
+                        <h3 style="color: #666; margin-bottom: 0.5rem;">Unable to load matches</h3>
+                        <p style="color: #888;">Please try refreshing the page.</p>
+                    </div>
+                `;
+            }
+        }
+    }
+    
+    // Initialize matches manager
+    new MatchesManager();
+}
+
+// Service Worker registration - only if supported
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+                console.log('ServiceWorker registered:', registration);
+            })
+            .catch(error => {
+                console.log('ServiceWorker registration failed:', error);
+            });
+    });
+}
+
 // Matches Section Functionality
 class MatchesManager {
     constructor() {

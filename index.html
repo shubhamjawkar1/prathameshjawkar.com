@@ -23,8 +23,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     
-    <!-- Critical CSS - inline for fastest loading -->
-    <link rel="stylesheet" href="critical.css" />
+    <!-- CSS files - load immediately for proper styling -->
+    <link rel="stylesheet" href="styles.css" />
     
     <!-- Performance optimizations -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -35,29 +35,19 @@
     
     <!-- Preload critical images -->
     <link rel="preload" as="image" href="data/banner.jpg" fetchpriority="high">
-    <link rel="preload" as="script" href="script-optimized.js">
+    <link rel="preload" as="script" href="script.js">
     
     <!-- Optimized font loading with font-display swap -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="preload"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      rel="stylesheet"
     />
-    <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    </noscript>
     
-    <!-- Font Awesome with optimized loading -->
+    <!-- Font Awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="preload"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      rel="stylesheet"
     />
-    <noscript>
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    </noscript>
     
     <!-- PWA Manifest -->
     <link rel="manifest" href="/manifest.json">
@@ -159,9 +149,8 @@
             </a>
           </div>
           <div class="achievement-image">
-            <img src="data/32nd place at the World Cup Final.png" 
-                 alt="Prathamesh Jawkar World Cup Final Silver Medal" 
-                 loading="lazy" />
+        <img src="data/32nd place at the World Cup Final.png" 
+             alt="Prathamesh Jawkar World Cup Final Silver Medal" />
           </div>
         </div>
       </div>
@@ -174,9 +163,6 @@
           src="data/Prathamesh Jawkars archery journey A chance start a filmy trigger and golden finish at Asian Games.jpg" 
           alt="Prathamesh Jawkar's Archery Journey - Asian Games Golden Finish"
           class="journey-banner-image"
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
         />
         <div class="journey-banner-overlay">
           <div class="journey-banner-content">
@@ -800,7 +786,7 @@
       </div>
     </footer>
 
-    <!-- Optimized script with performance monitoring -->
-    <script src="script-optimized.js" defer></script>
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
   </body>
 </html>
