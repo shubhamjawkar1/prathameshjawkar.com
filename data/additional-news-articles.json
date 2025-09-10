@@ -1,0 +1,41 @@
+{
+  "additionalNewsArticles": [
+    {
+      "date": "April 9, 2025",
+      "source": "Hindustan Times",
+      "title": "Compound to recurve: Archer Jawkar makes bold switch to chase Olympic dream",
+      "excerpt": "Prathamesh Jawkar made a strategic switch from compound to recurve archery to pursue his Olympic dreams...",
+      "link": "https://www.hindustantimes.com/sports/others/compound-to-recurve-archer-jawkar-makes-bold-switch-to-chase-olympic-dream-101744206500289.html",
+      "image": "No featured image available"
+    },
+    {
+      "date": "March 25, 2025",
+      "source": "World Archery",
+      "title": "From compound to recurve: Prathamesh Jawkar's bold quest for Olympic glory",
+      "excerpt": "The Indian archer's journey from compound to recurve archery in pursuit of Olympic participation...",
+      "link": "https://www.worldarchery.sport/news/201921/compound-recurve-prathamesh-jawkars-bold-quest-olympic-glory",
+      "image": "No featured image available"
+    },
+    {
+      "date": "March 13, 2024",
+      "source": "Sportskeeda",
+      "title": "India's teenage archer Prathamesh Jawkar upsets Netherlands' Mike Schloesser to win gold at Shanghai World Cup",
+      "excerpt": "The young Indian archer defeated the Dutch world champion in a stunning upset victory...",
+      "link": "https://www.sportskeeda.com/us/olympics/news-india-s-teenage-archer-prathamesh-jawkar-upsets-netherlands-mike-schloesser-win-gold-shanghai-world-cup",
+      "image": "No featured image available"
+    },
+    {
+      "date": "November 3, 2023",
+      "source": "Hindustan Times",
+      "title": "Prathamesh Jawkar's archery journey: A chance start, a filmy trigger and golden finish at Asian Games",
+      "excerpt": "The inspiring story of how Prathamesh Jawkar discovered archery and his journey to Asian Games success...",
+      "link": "https://www.hindustantimes.com/sports/others/prathamesh-jawkars-archery-journey-a-chance-start-a-filmy-trigger-and-golden-finish-at-asian-games-101699003930531.html",
+      "image": "No featured image available"
+    }
+  ],
+  "instructions": {
+    "usage": "These are additional news articles that can be used to replace existing ones or add more news sections",
+    "imageHandling": "Some articles don't have featured images - use placeholder images in data/images/news/ folder",
+    "updating": "Copy any article object and paste it into the main news array in content.json or add directly to index.html"
+  }
+}

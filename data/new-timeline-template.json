@@ -1,0 +1,15 @@
+{
+  "newTimelineEvent": {
+    "year": "YYYY",
+    "title": "Achievement or Event Title",
+    "description": "Detailed description of what happened during this milestone in your career",
+    "image": "data/images/timeline/your-timeline-image.jpg"
+  },
+  "instructions": {
+    "step1": "Replace all placeholder text above with your actual timeline data",
+    "step2": "Add your timeline image to data/images/timeline/ folder (recommended: 300x200px)",
+    "step3": "Copy the newTimelineEvent object to data/content.json in the timeline array",
+    "step4": "Or add directly to index.html using the HTML template below"
+  },
+  "htmlTemplate": "<div class=\"timeline-item\">\n    <div class=\"timeline-date\">YYYY</div>\n    <div class=\"timeline-content\">\n        <h3>Achievement or Event Title</h3>\n        <p>Detailed description of what happened during this milestone</p>\n        <div class=\"timeline-image\">\n            <img src=\"data/images/timeline/your-timeline-image.jpg\" alt=\"Timeline Event\">\n        </div>\n    </div>\n</div>"
+}

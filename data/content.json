@@ -1,0 +1,207 @@
+{
+  "profile": {
+    "name": "Prathamesh Samadhan Jawkar",
+    "title": "International Archer",
+    "description": "World Ranking #14 • Precision, dedication, and the pursuit of excellence on every shot",
+    "profileImage": "data/images/profile/prathamesh-jawkar.jpg",
+    "bannerImage": "data/images/banner.jpg",
+    "email": "prathmeshjawkar@gmail.com",
+    "phone": "+91 9730208329",
+    "location": "Buldhana, Maharashtra, India",
+    "dateOfBirth": "September 8, 2003",
+    "worldRanking": "14",
+    "nickname": "Pratham",
+    "height": "175 cm (5'9\")",
+    "weight": "65 kg (143 lbs)",
+    "eyeColor": "Black",
+    "hairColor": "Black",
+    "zodiacSign": "Virgo",
+    "school": "Prabodhan Vidhyalaya, Buldhana",
+    "coach": "Chandrakant Ilag",
+    "hobby": "Photography",
+    "careerStart": "Started archery at age 12",
+    "famousFor": "Defeating World #1 Mike Schloesser in Shanghai 2023"
+  },
+  "statistics": [
+    {
+      "number": "14",
+      "label": "World Ranking"
+    },
+    {
+      "number": "25+",
+      "label": "Total Medals"
+    },
+    {
+      "number": "7",
+      "label": "Years Pro"
+    },
+    {
+      "number": "30+",
+      "label": "Championships"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "2016",
+      "title": "High School Champion",
+      "description": "Won state archery championship with perfect score of 720",
+      "image": "data/images/timeline/high-school-championship.jpg"
+    },
+    {
+      "year": "2017",
+      "title": "College Recruitment",
+      "description": "Accepted full scholarship to Stanford University Cardinal",
+      "image": "data/images/timeline/college-recruitment.jpg"
+    },
+    {
+      "year": "2020",
+      "title": "College Champion",
+      "description": "NCAA Archery Champion, broke collegiate record with 702.5 score",
+      "image": "data/images/timeline/college-champion.jpg"
+    },
+    {
+      "year": "2021",
+      "title": "Professional Debut",
+      "description": "Joined USA Archery National Team, ranked #1 in compound division",
+      "image": "data/images/timeline/professional-debut.jpg"
+    },
+    {
+      "year": "2023",
+      "title": "Olympic Champion",
+      "description": "Won Olympic Gold Medal in Individual Compound Archery",
+      "image": "data/images/timeline/olympic-champion.jpg"
+    }
+  ],
+  "achievements": [
+    {
+      "icon": "fas fa-trophy",
+      "title": "Olympic Champion",
+      "description": "2024 Paris Olympics Individual Gold Medal"
+    },
+    {
+      "icon": "fas fa-star",
+      "title": "World Champion",
+      "description": "2x World Archery Championship Winner"
+    },
+    {
+      "icon": "fas fa-medal",
+      "title": "World Record Holder",
+      "description": "World Record in 70m Compound: 720/720"
+    },
+    {
+      "icon": "fas fa-crosshairs",
+      "title": "Perfect Score",
+      "description": "Most Perfect 10s in International Competition"
+    },
+    {
+      "icon": "fas fa-flag-usa",
+      "title": "Team USA Captain",
+      "description": "Led Team USA to World Championship Victory"
+    },
+    {
+      "icon": "fas fa-award",
+      "title": "Archer of the Year",
+      "description": "World Archery Federation Athlete of the Year 2023"
+    }
+  ],
+  "media": [
+    {
+      "type": "video",
+      "title": "Olympic Winning Arrow",
+      "description": "The perfect 10 that secured gold",
+      "thumbnail": "data/images/media/olympic-winning-arrow.jpg",
+      "icon": "fas fa-play"
+    },
+    {
+      "type": "photo",
+      "title": "Training at the Range",
+      "description": "Daily practice session at 70 meters",
+      "thumbnail": "data/images/media/training-session.jpg",
+      "icon": "fas fa-camera"
+    },
+    {
+      "type": "photo",
+      "title": "Team USA Squad",
+      "description": "With the national archery team",
+      "thumbnail": "data/images/media/team-photo.jpg",
+      "icon": "fas fa-users"
+    },
+    {
+      "type": "video",
+      "title": "Victory Interview",
+      "description": "Reflecting on the championship",
+      "thumbnail": "data/images/media/interview.jpg",
+      "icon": "fas fa-microphone"
+    },
+    {
+      "type": "photo",
+      "title": "Community Outreach",
+      "description": "Youth archery development program",
+      "thumbnail": "data/images/media/charity-event.jpg",
+      "icon": "fas fa-heart"
+    },
+    {
+      "type": "photo",
+      "title": "Award Ceremony",
+      "description": "Receiving World Archer of the Year",
+      "thumbnail": "data/images/media/award-ceremony.jpg",
+      "icon": "fas fa-trophy"
+    }
+  ],
+  "news": [
+    {
+      "date": "September 08, 2025",
+      "source": "World Archery",
+      "title": "History made as India and Mexico take first compound team golds at worlds",
+      "excerpt": "Historic moment at the World Archery Championships as both India and Mexico secure their first compound team gold medals...",
+      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV85cUxONDcxVlFrV2J4NkdrUjRzSS1TeUg4R3drRkVTTVJLQkxaaE1IZ2ZRZFk2aDJnZVExOU90UkFIRlJ4bEg4VDdsMWFjb3FFLWpidmF1Wm5JakpTZUZvUWRzMDNRVHl3c3NaeTZNT3dDQWFVNHAxb0NYOHU4OVNNMW90b2UtVHRFdlYyamZFZFphcXc3VU1hbWpTbE5nUE9nVjdvbHBwSFVfRzlJX1NkUUVB?oc=5"
+    },
+    {
+      "date": "April 10, 2025",
+      "source": "The Hindu Sportstar",
+      "title": "Prathamesh Jawkar returns to Compound Archery after LA2028 Olympic inclusion",
+      "excerpt": "The Indian archer makes a strategic return to compound archery following the announcement of its inclusion in the Los Angeles 2028 Olympics...",
+      "image": "data/images/news/la2028-olympic-return.jpg",
+      "link": "https://sportstar.thehindu.com/archery/prathamesh-jawkar-compound-archery-olympics-los-angeles-2028/article69434517.ece"
+    },
+    {
+      "date": "March 20, 2025",
+      "source": "The Hindu Sportstar",
+      "title": "Olympics 'FOMO' behind Prathamesh Jawkar's swap from compound to recurve archery",
+      "excerpt": "The Indian archer made a bold decision to switch from compound to recurve archery, driven by his Olympic dreams and fear of missing out...",
+      "image": "https://th-i.thgim.com/public/incoming/6n5q5c/article69353318.ece/alternates/FREE_435/Prathamesh-Jawkar",
+      "link": "https://sportstar.thehindu.com/archery/prathamesh-jawkar-compound-archery-swap-recurve-olympics-dreams-indian-archer/article69353317.ece"
+    },
+    {
+      "date": "November 3, 2023",
+      "source": "Hindustan Times",
+      "title": "Prathamesh Jawkar's archery journey: A chance start, a filmy trigger and golden finish at Asian Games",
+      "excerpt": "An in-depth look at Prathamesh's journey from a chance beginning to becoming a celebrated archer with golden achievements...",
+      "image": "data/images/news/asian-games-2023.jpg",
+      "link": "https://www.hindustantimes.com/sports/others/prathamesh-jawkars-archery-journey-a-chance-start-a-filmy-trigger-and-golden-finish-at-asian-games-101699003930531.html"
+    },
+    {
+      "date": "September 11, 2023",
+      "source": "Olympics.com",
+      "title": "Archery World Cup Final 2023: Prathamesh Jawkar wins silver medal in compound event",
+      "excerpt": "The Indian archer claimed a stellar silver medal at the Archery World Cup Final in Hermosillo, showcasing his world-class compound archery skills...",
+      "image": "https://stillmed.olympics.com/media/Images/News/2023/09/11/2023-09-11-Archery-World-Cup-Final-2023-Hermosillo-Prathamesh-Jawkar.jpg",
+      "link": "https://www.olympics.com/en/news/archery-world-cup-final-2023-hermosillo-prathamesh-jawkar-india-result-scores"
+    },
+    {
+      "date": "May 20, 2023",
+      "source": "Times of India",
+      "title": "Prathamesh Jawkar shocks world No.1 to win maiden archery World Cup gold",
+      "excerpt": "In a stunning upset, the Indian teenager defeated the world's top-ranked archer to claim his first World Cup gold medal in Shanghai...",
+      "image": "https://timesofindia.indiatimes.com/photo/100379214.cms",
+      "link": "https://timesofindia.indiatimes.com/sports/more-sports/others/prathamesh-jawkar-shocks-world-no-1-to-win-maiden-archery-world-cup-gold/articleshow/100379214.cms"
+    }
+  ],
+  "socialMedia": {
+    "instagram": "https://instagram.com/alexjohnsonarchery",
+    "twitter": "https://twitter.com/alexjarchery",
+    "facebook": "https://facebook.com/alexjohnsonofficial",
+    "youtube": "https://youtube.com/alexjohnsonarchery"
+  }
+}

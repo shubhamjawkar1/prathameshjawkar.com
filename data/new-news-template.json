@@ -1,0 +1,17 @@
+{
+  "newNewsArticle": {
+    "date": "Month DD, YYYY",
+    "source": "News Source Name",
+    "title": "Your News Article Title Here",
+    "excerpt": "Brief excerpt or summary of the news article (1-2 sentences)...",
+    "image": "data/images/news/your-news-image.jpg",
+    "link": "https://actual-news-website-url.com/article"
+  },
+  "instructions": {
+    "step1": "Replace all placeholder text above with your actual news data",
+    "step2": "Add your news image to data/images/news/ folder",
+    "step3": "Copy the newNewsArticle object to data/content.json in the news array",
+    "step4": "Or add directly to index.html using the HTML template below"
+  },
+  "htmlTemplate": "<article class=\"news-card\">\n    <img src=\"data/images/news/your-news-image.jpg\" alt=\"News Story\">\n    <div class=\"news-content\">\n        <div class=\"news-meta\">\n            <span class=\"news-date\">Month DD, YYYY</span>\n            <span class=\"news-source\">News Source Name</span>\n        </div>\n        <h3>Your News Article Title Here</h3>\n        <p>Brief excerpt or summary of the news article...</p>\n        <a href=\"https://actual-news-website-url.com/article\" target=\"_blank\" class=\"news-link\">\n            Read More <i class=\"fas fa-arrow-right\"></i>\n        </a>\n    </div>\n</article>"
+}
