@@ -2,46 +2,65 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>
       Prathamesh Samadhan Jawkar - International Archer | Silver Medalist
     </title>
+    
+    <!-- Performance Meta Tags -->
+    <meta name="theme-color" content="#DC143C" />
+    <meta name="msapplication-navbutton-color" content="#DC143C" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Prathamesh Jawkar - International Archer, World Cup Silver Medalist and India's rising archery star. Watch his journey from junior champion to world-class performer." />
+    <meta name="keywords" content="Prathamesh Jawkar, archery, world cup, silver medal, India, compound archery, sports, archer" />
+    <meta name="author" content="Prathamesh Samadhan Jawkar" />
+    <link rel="canonical" href="https://prathameshjawkar.com" />
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     
-    <!-- CSS files -->
-    <link rel="stylesheet" href="styles.css" />
+    <!-- Critical CSS - inline for fastest loading -->
+    <link rel="stylesheet" href="critical.css" />
     
     <!-- Performance optimizations -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://www.youtube.com">
+    <link rel="dns-prefetch" href="https://img.youtube.com">
     
     <!-- Preload critical images -->
-    <link rel="preload" as="image" href="data/Prathamesh Jawkars archery journey A chance start a filmy trigger and golden finish at Asian Games.jpg">
-    <link rel="preload" as="image" href="data/banner.jpg">
-    <link rel="preload" as="image" href="data/32nd place at the World Cup Final.png">
+    <link rel="preload" as="image" href="data/banner.jpg" fetchpriority="high">
+    <link rel="preload" as="script" href="script-optimized.js">
     
-    <!-- Preload critical CSS -->
-    <link rel="preload" as="style" href="styles.css">
-    <link rel="preload" as="script" href="script.js">
-    
-    <!-- Optimized font loading -->
+    <!-- Optimized font loading with font-display swap -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-      media="print" onload="this.media='all'"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
     
-    <!-- Font Awesome with async loading -->
+    <!-- Font Awesome with optimized loading -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-      media="print" onload="this.media='all'"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    </noscript>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
   </head>
   <body>
     <!-- Navigation -->
@@ -781,6 +800,7 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Optimized script with performance monitoring -->
+    <script src="script-optimized.js" defer></script>
   </body>
 </html>

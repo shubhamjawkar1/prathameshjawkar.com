@@ -1,0 +1,70 @@
+{
+  "name": "Prathamesh Jawkar - International Archer",
+  "short_name": "Prathamesh Jawkar",
+  "description": "International Archer, World Cup Silver Medalist and India's rising archery star",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#DC143C",
+  "orientation": "portrait-primary",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["sports", "entertainment", "lifestyle"],
+  "icons": [
+    {
+      "src": "data/banner.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Journey",
+      "short_name": "Journey",
+      "description": "Prathamesh's archery journey",
+      "url": "/#journey",
+      "icons": [
+        {
+          "src": "data/banner.jpg",
+          "sizes": "96x96",
+          "type": "image/jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Matches",
+      "short_name": "Matches",
+      "description": "Watch match videos",
+      "url": "/#matches",
+      "icons": [
+        {
+          "src": "data/banner.jpg",
+          "sizes": "96x96",
+          "type": "image/jpeg"
+        }
+      ]
+    },
+    {
+      "name": "News",
+      "short_name": "News",
+      "description": "Latest news and updates",
+      "url": "/#news",
+      "icons": [
+        {
+          "src": "data/banner.jpg",
+          "sizes": "96x96",
+          "type": "image/jpeg"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data/banner.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "platform": "wide"
+    }
+  ]
+}

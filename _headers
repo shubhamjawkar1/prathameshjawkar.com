@@ -1,0 +1,56 @@
+# Cache static assets aggressively
+*.css
+  Cache-Control: public, max-age=31536000, immutable
+  
+*.js
+  Cache-Control: public, max-age=31536000, immutable
+  
+*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+  
+*.png
+  Cache-Control: public, max-age=31536000, immutable
+  
+*.webp
+  Cache-Control: public, max-age=31536000, immutable
+  
+*.svg
+  Cache-Control: public, max-age=31536000, immutable
+  
+*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  
+*.woff
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML files - shorter cache with revalidation
+*.html
+  Cache-Control: public, max-age=300, must-revalidate
+  
+# JSON data files
+*.json
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Service Worker - no cache
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+  
+# Manifest - medium cache
+/manifest.json
+  Cache-Control: public, max-age=86400
+
+# Security headers for all pages
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  
+# Performance headers
+/*
+  Vary: Accept-Encoding
+  
+# HSTS for HTTPS
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
