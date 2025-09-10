@@ -54,6 +54,15 @@
           <a href="#home" class="nav-link">Home</a>
           <a href="#journey" class="nav-link">Journey</a>
           <a href="#highlights" class="nav-link">Highlights</a>
+          <div class="dropdown">
+            <a href="#matches" class="nav-link dropdown-toggle">Matches <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-menu">
+              <a href="#matches" class="dropdown-item">All Matches</a>
+              <a href="#matches" class="dropdown-item" data-filter="World Cup Final">World Cup Final</a>
+              <a href="#matches" class="dropdown-item" data-filter="World Cup Stage 2">World Cup Stage 2</a>
+              <a href="#matches" class="dropdown-item" data-filter="Highlights">Highlights</a>
+            </div>
+          </div>
           <a href="#media" class="nav-link">Media</a>
           <a href="#news" class="nav-link">News</a>
         </div>
@@ -528,6 +537,32 @@
             </div>
           </div>
         </div>
+    </section>
+
+    <!-- Matches Section -->
+    <section id="matches" class="matches">
+      <div class="container">
+        <h2 class="section-title">Match Videos</h2>
+        <p class="section-subtitle">Watch Prathamesh's most thrilling archery battles from major championships</p>
+        
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">All Matches</button>
+          <button class="filter-btn" data-filter="World Cup Final">World Cup Final</button>
+          <button class="filter-btn" data-filter="World Cup Stage 2">World Cup Stage</button>
+          <button class="filter-btn" data-filter="Highlights">Highlights</button>
+        </div>
+        
+        <!-- Loading indicator -->
+        <div id="matches-loading" class="loading" style="display: none;">
+          <i class="fas fa-spinner fa-spin"></i> Loading matches...
+        </div>
+        
+        <!-- Matches Grid -->
+        <div id="matches-grid" class="matches-grid">
+          <!-- Matches will be dynamically loaded here -->
+        </div>
+      </div>
     </section>
 
     <!-- News Section -->
